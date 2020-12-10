@@ -1,0 +1,71 @@
+prep for meeting
+  rviz
+  website
+  move to improved aws setup
+  layout of network
+plan
+  connect to current server
+  then upgrade to better? aws server
+curiosity questions:
+  how vpn running on vm affects host computer?
+  what is a daemon?
+useful info:
+  my public ip: 73.189.175.84
+  my private ip: 192.168.0.2
+
+  server private ip: 172.31.0.41
+  server public ip: 52.37.187.186
+  server hostname: ec2-52-37-187-186.us-west-2.compute.amazonaws.com
+  running melodic, 1.14.10
+
+
+layout chart
+
+currently public access (if have key?)
+only have free trial?
+
+see other people currently on vpn?
+
+turtlebot running on someone else's ssh instance?
+
+want to see turtlebot
+want to see walls and stuff
+want to communicate over network
+
+
+created a husarnet account, creating unity hub id
+keyboard controls rather than using ros?
+
+documentation for process
+use aws educate?
+
+106a.pem floating around
+
+what happens if package?, testing if run on phone?
+input for ip, for other usage
+documentation of process
+build full package for ros
+
+breathe and focus you dimwitted dumbass
+
+can't kill husarnet client?
+
+pushing to git repo for unity
+
+
+movement has to be relative to a point?
+
+could have done all in python?
+why using unity?
+
+why fucking turtlebots
+
+had to change line endings with https://stackoverflow.com/questions/19425857/env-python-r-no-such-file-or-directory
+
+charge phone
+
+running low on pc space
+
+how disconnect from husarnet?
+
+neatly package everything for instant installation and running?

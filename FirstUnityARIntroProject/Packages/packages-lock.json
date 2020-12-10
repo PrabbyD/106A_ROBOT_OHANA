@@ -47,6 +47,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.robotics.ros-tcp-connector": {
+      "version": "https://github.com/Unity-Technologies/ROS-TCP-Connector.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "edb7af008543362c398b0658bf644a6b9da5a05d"
+    },
     "com.unity.settings-manager": {
       "version": "1.0.2",
       "depth": 1,
@@ -141,7 +148,7 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.subsystemregistration": "1.0.5"
+        "com.unity.subsystemregistration": "1.0.6"
       },
       "url": "https://packages.unity.com"
     },
