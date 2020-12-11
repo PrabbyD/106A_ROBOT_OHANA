@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.UI;
 
 
 [RequireComponent(typeof(ARRaycastManager))]
@@ -10,6 +11,9 @@ public class ARTapToPlace : MonoBehaviour
 {
 
     public GameObject gameObjectToInstantiate;
+    public GameObject wallObject;
+    public Toggle placingToggle;
+    public Dropdown objectSelect;
 
     private GameObject spawnedObject;
     private ARRaycastManager _arRaycastManager;
@@ -32,13 +36,24 @@ public class ARTapToPlace : MonoBehaviour
         if (_arRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
         {
             var hitPose = hits[0].pose;
-            if (spawnedObject == null)
+
+            if (placingToggle.isOn)
             {
-                spawnedObject = Instantiate(gameObjectToInstantiate, hitPose.position, hitPose.rotation);
-            }
-            else
-            {
-                spawnedObject.transform.position = hitPose.position;
+                if (objectSelect.captionText.text == "Walls")
+                {
+                    Instantiate(wallObject, hitPose.position, hitPose.rotation);
+                }
+                else if (objectSelect.captionText.text == "Turtlebot")
+                {
+                    if (spawnedObject == null)
+                    {
+                        spawnedObject = Instantiate(gameObjectToInstantiate, hitPose.position, hitPose.rotation);
+                    }
+                    else
+                    {
+                        spawnedObject.transform.position = hitPose.position;
+                    }
+                }
             }
 
         }
