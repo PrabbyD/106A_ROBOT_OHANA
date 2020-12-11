@@ -6,6 +6,7 @@ using UnityEngine.XR.ARSubsystems;
 using UnityEngine.UI;
 
 
+
 [RequireComponent(typeof(ARRaycastManager))]
 public class ARTapToPlace : MonoBehaviour
 {
@@ -14,10 +15,12 @@ public class ARTapToPlace : MonoBehaviour
     public GameObject wallObject;
     public Toggle placingToggle;
     public Dropdown objectSelect;
+    public Text posText;
 
     private GameObject spawnedObject;
     private ARRaycastManager _arRaycastManager;
     private Vector2 touchPosition;
+    
 
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
@@ -39,6 +42,8 @@ public class ARTapToPlace : MonoBehaviour
 
             if (placingToggle.isOn)
             {
+
+                
                 if (objectSelect.captionText.text == "Walls")
                 {
                     Instantiate(wallObject, hitPose.position, hitPose.rotation);
@@ -47,12 +52,13 @@ public class ARTapToPlace : MonoBehaviour
                 {
                     if (spawnedObject == null)
                     {
-                        spawnedObject = Instantiate(gameObjectToInstantiate, hitPose.position, hitPose.rotation);
+                        spawnedObject = GameObject.Find("turtlebot3_burger");
+
                     }
-                    else
+                    else 
                     {
-                        spawnedObject.transform.position = hitPose.position;
-                    }
+                        posText.text = spawnedObject.transform.position.ToString();
+                    } 
                 }
             }
 
